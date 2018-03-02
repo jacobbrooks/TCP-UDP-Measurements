@@ -1,0 +1,12 @@
+public class Main{
+	public static void main(String[] args){
+		String[] command = {"ssh", "jbrooks2@altair.cs.oswego.edu", "java -classpath Desktop/csc445a1/tcp/Client/ Main"};
+		Thread t = new Thread(new Server(command));
+		t.start();
+		try{
+			t.join();
+		}catch(InterruptedException e){
+			e.printStackTrace();
+		}
+	}
+}
